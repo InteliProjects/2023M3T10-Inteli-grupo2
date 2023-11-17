@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'partials/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quemSomos.css') }}">
+    <title>Quem Somos| Poul</title>
+
+</head>
+
+<body>
+    {% include 'partials/header.html' %}
+
+    <div class="containerPrincipal_column">
+        <img src="{{ url_for('static', filename='images/inteliLogo.png') }}" alt="Logo Inteli" class="logoInteli">
+        <div class="containerPrincipal_row">
+            <div class="card">
+                <img src="https://media.licdn.com/dms/image/D4D03AQGgHFBZVbghCA/profile-displayphoto-shrink_400_400/0/1686658365505?e=1703116800&v=beta&t=Jog5-utEhgx9IGfnN8n8-7l5Dw91PubxO7MjMlW29d8"
+                    alt="">
+                <div class="content">
+                    <p class="title">Felipe Liberman Fuchs<br><span>Ciência da Computação</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://media.licdn.com/dms/image/C4D03AQEwdn_-r8CqIA/profile-displayphoto-shrink_400_400/0/1656107019664?e=1703116800&v=beta&t=qumj832d1b0Rp8WCQjpAFRDXPXemOA335VEJpArbT7c"
+                    alt="">
+                <div class="content">
+                    <p class="title">Filipe Kanazawa Calabro<br><span>Ciência da Computação</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://media.licdn.com/dms/image/D5603AQHxYfu-30QYKQ/profile-displayphoto-shrink_400_400/0/1685640690998?e=1703116800&v=beta&t=dk0k507yuWZm2xX2E39pODNsClOmSUeq2IIjKzbHpH8"
+                    alt="">
+                <div class="content">
+                    <p class="title">João Cauê Hirata Machado<br><span>Ciência da Computação</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerPrincipal_row">
+            <div class="card">
+                <img src="https://media.licdn.com/dms/image/D5603AQEkp6Rjz7aZLQ/profile-displayphoto-shrink_400_400/0/1675300302347?e=1703116800&v=beta&t=zMhG-TkEKvS3zPVcGkcHcJ0iASGr2tT3mT6hR9ZOgRQ"
+                    alt="">
+                <div class="content">
+                    <p class="title">Marcelo Miguel Pereira de Assis<br><span>Engenharia de Software</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://media.licdn.com/dms/image/D4D03AQE68MsDyN9gqQ/profile-displayphoto-shrink_400_400/0/1691670545036?e=1703116800&v=beta&t=6Vtez2kz7TFDnvYLwvFeCiqYCx0utDQYnUhnCIXJP1Q"
+                    alt="">
+                <div class="content">
+                    <p class="title">Moyses Birman Anijar<br><span>Sistema da Informação</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="" alt="">
+                <div class="content">
+                    <p class="title">Pedro Auler de Barros Martins<br><span>Ciência da Computação</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerPrincipal_row_final">
+            <div class="card">
+                <img src="https://media.licdn.com/dms/image/C4D03AQH8qwsj5xAQTw/profile-displayphoto-shrink_400_400/0/1652147089651?e=1703116800&v=beta&t=njodbcZP0vcIF0oGHRRytNqbM0So8zBG2c9B_PocYrU"
+                    alt="">
+                <div class="content">
+                    <p class="title">Raul Rezende Szpak<br><span>Engenharia da Computação</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/footer.html' %}
+    {% include 'partials/scripts.html' %}
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.classList.add("card_js");
+            });
+
+            card.addEventListener('mouseout', () => {
+                card.classList.remove("card_js");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

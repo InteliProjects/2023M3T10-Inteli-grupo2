@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'partials/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Home| Poul</title>
+
+</head>
+
+<body>
+    {% include 'partials/header.html' %}
+
+    <main>
+        <form action="/" class="caixaPrincipal" method="post" enctype="multipart/form-data">
+            <div class="fileUpload">
+                <label for="fileUpload_inputFile" id="dropArea">
+                    <input type="file" id="fileUpload_inputFile" accept=".csv" name="arquivos" hidden multiple>
+                    <div class="fileView">
+                        <img id="fileView_img" src="{{ url_for('static', filename='images/fileUpload.png') }}"
+                            alt="Imagem upload de arquivos">
+                        <p id="fileView_p">click aqui<br>para carregar os arquivo</p>
+                        <span id="fileView_span">Faça o upload dos arquivos .csv</span>
+                    </div>
+                </label>
+            </div>
+            <div class="card">
+                <div class="card_principal">
+                    <div class="IM">
+                        <div class="dot-spinner" id="dot-spinner-IMPadrao">
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                        </div>
+                        <div class="IM_Texto" id="IM_Texto-IMPadrao">
+                            <p>IM_(data informe)_semNP</p>
+                        </div>
+                    </div>
+                    <div class="IM">
+                        <div class="dot-spinner" id="dot-spinner-IMClasse">
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                        </div>
+                        <div class="IM_Texto" id="IM_Texto-IMClasse">
+                            <p>IM_Classes_(data informe)_semNP</p>
+                        </div>
+                    </div>
+                    <div class="periodo">
+                        <div class="periodo_data">
+                            <p>Mês Início</p>
+                            <input type="month" id="mes_inicio"  name="mes_inicial" required>
+                        </div>
+                        <div class="periodo_data">
+                            <p>Mês Final</p>
+                            <input type="month" id="mes_termino" name="mes_final" required><br>
+                        </div>
+                    </div>
+                    <div class="divButton">
+                        <button type="submit" class="buttonSubmit" disabled>
+                            <span>Processar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    {% include 'partials/footer.html' %}
+    {% include 'partials/scripts.html' %}
+
+    <script type="module" src="{{ url_for('static', filename='script_upload_arquivos.js') }}"></script>
+</body>
+
+</html>

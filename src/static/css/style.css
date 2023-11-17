@@ -1,0 +1,369 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+
+    --bg-principal: rgb(19, 29, 69);
+    --cor-button: #0084ff;
+    --cor-fotter-0: #0e0c0c;
+    --cor-fotter-10: #171717;
+    --cor-fotter-parceiros: #202020;
+}
+
+body {
+    font-size: 18px;
+    line-height: 22px;
+    font-family: var(--fonte-principal);
+    background: var(--bg-principal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fonte-secundaria);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 7em;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(30deg, rgba(61, 195, 201, 1) 0%, rgba(73, 71, 223, 1) 50%, rgba(61, 195, 201, 1) 100%);
+}
+
+.quemSomos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3%;
+
+}
+
+.quemSomos_button {
+    height: 4em;
+    width: 45%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid var(--cor-button);
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: var(--cor-button);
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.quemSomos_button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: var(--cor-button);
+    z-index: -1;
+}
+
+.quemSomos_button:hover,
+.quemSomos_button:focus {
+    color: white;
+    cursor: pointer;
+}
+
+.quemSomos_button:hover:before,
+.quemSomos_button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.quemSomos_button:active {
+    transform: scale(0.9);
+}
+
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    width: 33.3%;
+}
+
+.logo_button {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: 0px;
+    height: 9em;
+    width: 15em;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+}
+
+.logo_polvoPoul {
+    margin-left: auto;
+    margin-right: auto;
+    height: 9em;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.logo_logoPoul {
+    margin-top: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 14em;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.logo_button:hover img {
+    transform: translateY(-10.2em);
+}
+
+.logo_button:hover {
+    height: 14.5em;
+    cursor: pointer;
+}
+
+.contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3%;
+
+}
+
+.contato_button {
+    height: 4.4em;
+    width: 45%;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--cor-button);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contato_button span {
+    z-index: 1;
+    display: inline-block;
+    background-color: white;
+    height: 3em;
+    width: 105%;
+    border-radius: 2px;
+    color: #0084ff;
+    line-height: 55px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-left: -6px;
+    margin-top: -2px;
+    transition: all 0.5s;
+    font-weight: bold;
+    border: 3px solid var(--cor-button);
+
+}
+
+.contato_button .container {
+    z-index: -1;
+    width: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50px);
+    transition: all 0.4s;
+}
+
+.contato_button .container svg {
+    padding: 0 10px;
+}
+
+.contato_button:hover {
+    cursor: pointer;
+}
+
+.contato_button:hover span {
+    width: 0;
+    color: transparent;
+    background-color: transparent;
+}
+
+.contato_button:hover .container {
+    z-index: 2;
+    width: 100%;
+}
+
+main {
+    height: 80vh;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--cor-fotter-10);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Inter", sans-serif;
+}
+
+.footerAuxiliar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.div_footerButton{
+    width: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 80%;
+    height: auto;
+    float: left;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.box:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+}
+
+.box:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+}
+
+.box:hover {
+    box-shadow: 0 5px 15px #e1e1e1;
+}
+
+.box:hover:before {
+    border-color: #e1e1e1;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+    border-color: #e1e1e1;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .5s;
+}
+
+.footerButton {
+    color: #e1e1e1;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.projeto {
+    font-family: "Inter", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    color: #f5f5f5;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.projeto_texto {
+    margin-top: 5px;
+}
+
+.projeto_parceiros {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.projeto_parceiros img {
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+
+
+.container img:last-child {
+    margin-right: 0;
+}
+
+.projeto_parceiros_poul {
+    max-width: 8em;
+    width: 33%;
+}
+
+.projeto_parceiros_inteli {
+    max-width: 9.5em;
+    width: 33%;
+}
+
+.projeto_parceiros_cvm {
+    max-width: 10.5em;
+    width: 33%;
+}
+
+.direitos {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-fotter-0);
+    color: white;
+    margin-top: 5px;
+    padding: 1em;
+}
+
+.direitos h3 {
+    font-size: 0.9em;
+    font-weight: 100;
+}
+

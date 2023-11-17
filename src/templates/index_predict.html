@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'partials/head.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>Home| Poul</title>
+
+</head>
+
+<body>
+    {% include 'partials/header.html' %}
+
+    <main>
+        <form action="/" class="caixaPrincipal" method="post" enctype="multipart/form-data">
+            <div class="fileUpload">
+                <label for="fileUpload_inputFile" id="dropArea">
+                    <input type="file" id="fileUpload_inputFile" accept=".csv" name="arquivos" hidden multiple>
+                    <div class="fileView">
+                        <img id="fileView_img" src="{{ url_for('static', filename='images/fileUpload.png') }}"
+                            alt="Imagem upload de arquivos">
+                        <p id="fileView_p">click aqui<br>para carregar os arquivo</p>
+                        <span id="fileView_span">Faça o upload dos arquivos .csv</span>
+                    </div>
+                </label>
+            </div>
+            <div class="card">
+                <div class="card_principal">
+                    <div class="IM">
+                        <div class="dot-spinner" id="dot-spinner-IMPadrao">
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                        </div>
+                        <div class="IM_Texto" id="IM_Texto-IMPadrao">
+                            <p>IM_(data informe)_semNP</p>
+                        </div>
+                    </div>
+                    <div class="IM">
+                        <div class="dot-spinner" id="dot-spinner-IMClasse">
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                            <div class="dot-spinner__dot"></div>
+                        </div>
+                        <div class="IM_Texto" id="IM_Texto-IMClasse">
+                            <p>IM_Classes_(data informe)_semNP</p>
+                        </div>
+                    </div>
+                    <div class="periodo">
+                        <div class="periodo_data">
+                            <p>Mês Início</p>
+                            <input type="month" id="mes_inicio" name="mes_inicial" required>
+                        </div>
+                        <div class="periodo_data">
+                            <p>Mês Final</p>
+                            <input type="month" id="mes_termino" name="mes_final" required><br>
+                        </div>
+                    </div>
+                    <div class="divButton">
+                        <button type="submit" class="buttonSubmit" disabled>
+                            <span>Processar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="fundos_alerta_card">
+
+        </div>
+    </main>
+
+    <section class="section_fundosAlerta">
+        <div class="fundosAlertaCard">
+            <div class="fundosAlertaCard_titulo">
+                <h1>FIDCs Em Alerta</h1>
+            </div>
+            <div class="fundosAlertaCard_linha_exemplo" id="fundosCard_alerta">
+                <p class="fundosAlertaCard_linha_exemplo_Nome">Nome Do Fundo</p>
+                <p class="fundosAlertaCard_linha_exemplo_CNPJ">CNPJ</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section_fundosAlerta">
+        <div class="fundosAlertaCard">
+            <div class="fundosAlertaCard_titulo">
+                <h1>FIDCs Liquidados</h1>
+            </div>
+            <div class="fundosAlertaCard_linha_exemplo" id="fundosCard_liquidados">
+                <p class="fundosAlertaCard_linha_exemplo_Nome">Nome Do Fundo</p>
+                <p class="fundosAlertaCard_linha_exemplo_CNPJ">CNPJ</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section_fundosAlerta">
+        <div class="fundosAlertaCard">
+            <div class="fundosAlertaCard_titulo">
+                <h1>FIDCs com valores nulos</h1>
+            </div>
+            <div class="fundosAlertaCard_linha_exemplo" id="fundosCard_nulos">
+                <p class="fundosAlertaCard_linha_exemplo_Nome">Nome Do Fundo</p>
+                <p class="fundosAlertaCard_linha_exemplo_CNPJ">CNPJ</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    {% include 'partials/footer.html' %}
+    {% include 'partials/scripts.html' %}
+
+    <script type="module" src="{{ url_for('static', filename='script_upload_arquivos.js') }}"></script>
+    <script>
+        var principal_array = '{{principal_array | tojson | safe}}'
+        principal_array = JSON.parse(principal_array)
+
+        var liquidados_array = '{{liquidadas_array | tojson | safe}}'
+        liquidados_array = JSON.parse(liquidados_array)
+
+        var nulos_array = '{{nulos_array | tojson | safe}}'
+        nulos_array = JSON.parse(nulos_array)
+    </script>
+    <script type="module" src="{{ url_for('static', filename='script_fundos_com_problemas.js') }}"></script>
+</body>
+
+</html>
